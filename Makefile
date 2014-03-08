@@ -6,12 +6,12 @@
 #    By: gpetrov <gpetrov@student.42.fr>            +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2014/03/07 21:33:17 by gpetrov           #+#    #+#              #
-#    Updated: 2014/03/08 21:55:37 by gpetrov          ###   ########.fr        #
+#    Updated: 2014/03/08 23:54:37 by gpetrov          ###   ########.fr        #
 #                                                                              #
 #******************************************************************************#
 
 NAME	= puissance4
-FILES	= main.c win_conditions.c tools.c check.c move.c
+FILES	= main.c win_conditions.c tools.c check.c move.c charly.c
 SRCS	= $(addprefix src/, $(FILES))
 OBJS	= $(SRCS:src/%.c=.obj/%.o)
 INC		= -I includes -I libft/includes

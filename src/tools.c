@@ -6,7 +6,7 @@
 /*   By: gpetrov <gpetrov@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2014/03/08 21:48:32 by gpetrov           #+#    #+#             */
-/*   Updated: 2014/03/08 21:51:12 by gpetrov          ###   ########.fr       */
+/*   Updated: 2014/03/08 22:20:53 by gpetrov          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -31,11 +31,14 @@ int		ft_hazard(t_data *data)
 	return (0);
 }
 
-void	ft_print_map_help1(int i)
+void	ft_print_map_help1(int i, t_data *data)
 {
-	ft_putstr("  ");
-	ft_putnbr(i + 1);
-	ft_putstr(" ");
+	if (data->size_x < 1000)
+	{
+		ft_putstr("  ");
+		ft_putnbr(i + 1);
+		ft_putstr(" ");
+	}
 }
 
 void	ft_print_map_help2(void)
@@ -53,7 +56,7 @@ void	ft_print_map(t_data *data)
 	j = -1;
 	i = -1;
 	while (++i < data->size_x)
-		ft_print_map_help1(i);
+		ft_print_map_help1(i, data);
 	ft_putchar('\n');
 	while (++j < data->size_y)
 	{

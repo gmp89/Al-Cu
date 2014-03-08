@@ -6,7 +6,7 @@
 /*   By: gpetrov <gpetrov@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2014/03/08 21:56:12 by gpetrov           #+#    #+#             */
-/*   Updated: 2014/03/08 21:57:09 by gpetrov          ###   ########.fr       */
+/*   Updated: 2014/03/08 23:26:34 by gpetrov          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -60,11 +60,17 @@ int		ft_move_player(t_data *data, char *piece)
 int		ft_put_piece(t_data *data, char *piece)
 {
 	if (ft_atoi(piece) > data->size_x || ft_atoi(piece) < 1)
+	{
+		ft_putstr("\nInvalid piece try again\n\n");
 		return (-1);
+	}
 	if (data->turn == 1)
 	{
 		if (ft_move_player(data, piece) == -1)
+		{
+			ft_putstr("\nInvalid piece try again\n\n");
 			return (-1);
+		}
 	}
 	else
 		ft_move_player(data, piece);
@@ -73,4 +79,22 @@ int		ft_put_piece(t_data *data, char *piece)
 	else
 		data->turn = 1;
 	return (0);
+}
+
+int		ft_check_null(t_data *data)
+{
+	int	i;
+	int	j;
+
+	j = -1;
+	while (++j < data->size_y)
+	{
+		i = -1;
+		while (++i < data->size_x)
+		{
+			if (data->map[j][i] == data->empty)
+				return (1);
+		}
+	}
+	return (-1);
 }

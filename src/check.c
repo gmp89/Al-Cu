@@ -6,7 +6,7 @@
 /*   By: gpetrov <gpetrov@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2014/03/08 21:52:22 by gpetrov           #+#    #+#             */
-/*   Updated: 2014/03/08 21:53:33 by gpetrov          ###   ########.fr       */
+/*   Updated: 2014/03/08 23:55:37 by gpetrov          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -56,9 +56,15 @@ int		ft_check_piece(char *piece)
 	while (piece[++i] != 0)
 	{
 		if (!ft_isdigit(piece[i]))
+		{
+			ft_putstr("\nInvalid piece try again\n\n");
 			return (-1);
+		}
 	}
 	if (ft_check_if_bigger_than_int(piece) == -1)
+	{
+		ft_putstr("\nInvalid piece try again\n\n");
 		return (-1);
+	}
 	return (0);
 }

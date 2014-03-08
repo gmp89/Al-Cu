@@ -6,7 +6,7 @@
 /*   By: gpetrov <gpetrov@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2014/03/07 20:13:47 by gpetrov           #+#    #+#             */
-/*   Updated: 2014/03/08 21:58:09 by gpetrov          ###   ########.fr       */
+/*   Updated: 2014/03/08 23:59:01 by gpetrov          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -57,10 +57,15 @@ int		ft_move_player(t_data *data, char *piece);
 int		ft_check_if_bigger_than_int(char *str);
 int		ft_while_help1(t_data *data);
 void	ft_print_map(t_data *data);
-void	ft_print_map_help1(int i);
+void	ft_print_map_help1(int i, t_data *data);
 void	ft_print_map_help2(void);
 int		ft_charly(t_data *data);
 int		ft_charly_help1(t_data *data, int i, int j);
+int		ft_charly_help2(t_data *data);
+int		ft_charly_help3(t_data *data);
+int		ft_charly_help4(t_data *data);
 int		ft_while_help1(t_data *data);
+int		ft_check_null(t_data *data);
+void	ft_free_data(t_data *data);
 
 #endif
