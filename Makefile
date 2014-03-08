@@ -5,13 +5,13 @@
 #                                                     +:+ +:+         +:+      #
 #    By: gpetrov <gpetrov@student.42.fr>            +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
-#    Created: 2014/02/11 12:40:38 by gpetrov           #+#    #+#              #
-#    Updated: 2014/03/07 20:13:04 by gpetrov          ###   ########.fr        #
+#    Created: 2014/03/07 21:33:17 by gpetrov           #+#    #+#              #
+#    Updated: 2014/03/08 15:24:53 by gpetrov          ###   ########.fr        #
 #                                                                              #
 #******************************************************************************#
 
 NAME	= puissance4
-FILES	= main.c
+FILES	= main.c win_conditions.c
 SRCS	= $(addprefix src/, $(FILES))
 OBJS	= $(SRCS:src/%.c=.obj/%.o)
 INC		= -I includes -I libft/includes
@@ -22,6 +22,9 @@ all: $(NAME)
 $(NAME): $(OBJS)
 	@make -C libft
 	@cc $(FLAGS) $(SRCS) -o $(NAME) $(INC) $(LIB)
+	@echo "\n > \033[36m$(NAME)\033[m project com\
+	pilation [\033[32mDONE\033[m]\n"
+
 
 .obj/%.o: src/%.c
 	@mkdir -p .obj
@@ -30,7 +33,7 @@ $(NAME): $(OBJS)
 gdb:
 	make -C libft
 	cc -g $(FLAGS) $(SRCS) -o $(NAME) $(INC) $(LIB)
-	gdb $(NAME)
+	lldb $(NAME)
 clean:
 	@rm -rf .obj
 fclean: clean
