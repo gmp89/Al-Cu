@@ -6,7 +6,7 @@
 /*   By: gtandeo <gtandeo@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2014/03/08 02:15:06 by gtandeo           #+#    #+#             */
-/*   Updated: 2014/03/08 02:15:06 by gtandeo          ###   ########.fr       */
+/*   Updated: 2014/03/08 21:58:22 by gpetrov          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -20,7 +20,7 @@ int		tray_analyse(t_data *d, char player)
 		return (1);
 	if (vertical_analyse(d, player) == 1)
 		return (1);
-	if (orizontal_analyse(d, player) == 1)
+	if (horizontal_analyse(d, player) == 1)
 		return (1);
 	return (0);
 }
@@ -107,7 +107,7 @@ int		vertical_analyse(t_data *d, char player)
 	return (0);
 }
 
-int		orizontal_analyse(t_data *d, char player)
+int		horizontal_analyse(t_data *d, char player)
 {
 	int		x;
 	int		y;
